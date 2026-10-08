@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History of Optical Storage Technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08090c;
+    --bg-2:#0e1015;
+    --panel:#14171f;
+    --line:#232733;
+    --text:#e8eaf0;
+    --muted:#9aa2b4;
+    --gold:#c8a45c;
+    --cyan:#5fd0d8;
+    --head:"Barlow Condensed","DIN Neuzeit Grotesk","Oswald",Arial,sans-serif;
+    --body:"Barlow","DIN Next","Futura","Helvetica Neue",Arial,sans-serif;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+  /* ---------- HEADER + NAV ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(8,9,12,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  .nav-wrap{max-width:1200px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{font-family:var(--head);font-weight:600;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:var(--text);text-decoration:none;}
+  .brand span{color:var(--gold);}
+  nav ul{list-style:none;display:flex;gap:34px;}
+  nav a{color:var(--muted);text-decoration:none;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;transition:color .25s;}
+  nav a:hover{color:var(--gold);}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 32px 80px;background:var(--bg);}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:url("images/bg-cover.png") center 28%/cover no-repeat;animation:heroDrift 38s ease-in-out infinite alternate;}
+  @keyframes heroDrift{from{transform:scale(1);}to{transform:scale(1.14);}}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(8,9,12,.30),rgba(8,9,12,.44) 55%,var(--bg) 96%),radial-gradient(ellipse at 70% 40%,rgba(200,164,92,.14),transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(95,208,216,.10),transparent 55%);}
+  .hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;}
+  .eyebrow{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;}
+  h1{font-family:var(--head);font-size:clamp(48px,6.8vw,92px);line-height:1.02;letter-spacing:.02em;font-weight:300;text-transform:uppercase;}
+  h1 em{font-family:var(--serif);font-style:italic;font-weight:600;text-transform:none;color:var(--gold);}
+  .lede{margin-top:28px;font-size:18px;font-weight:300;color:var(--muted);max-width:52ch;}
+  .cta-row{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:15px 34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);color:var(--gold);transition:.28s;background:transparent;}
+  .btn:hover{background:var(--gold);color:#0a0b0e;}
+  .btn.solid{background:var(--gold);color:#0a0b0e;}
+  .btn.solid:hover{background:transparent;color:var(--gold);}
+  .hero-art{position:relative;display:flex;justify-content:center;align-items:center;}
+  .hero-art img{width:100%;max-width:430px;filter:drop-shadow(0 40px 70px rgba(0,0,0,.75));animation:spin 34s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:118px 32px;}
+  .wrap{max-width:1200px;margin:0 auto;}
+  .sec-tag{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px;}
+  h2{font-family:var(--head);font-size:clamp(34px,4.4vw,56px);line-height:1.1;font-weight:300;text-transform:uppercase;margin-bottom:22px;}
+  .sec-intro{color:var(--muted);max-width:66ch;font-size:16.5px;font-weight:300;}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{margin-top:66px;border-left:1px solid var(--line);padding-left:0;}
+  .tl{position:relative;padding:0 0 42px 40px;}
+  .tl:last-child{padding-bottom:0;}
+  .tl::before{content:"";position:absolute;left:-6px;top:9px;width:11px;height:11px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(200,164,92,.14);}
+  .tl-year{font-family:var(--head);font-weight:600;font-size:32px;color:var(--gold);line-height:1;}
+  .tl-title{font-size:19px;margin-top:6px;font-weight:600;}
+  .tl-body{color:var(--muted);font-size:15.5px;margin-top:8px;max-width:64ch;}
+
+  /* ---------- CARDS ---------- */
+  .grid{margin-top:62px;display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:26px;}
+  .card{background:var(--panel);border:1px solid var(--line);padding:0;overflow:hidden;transition:.3s;scroll-margin-top:130px;}
+  .card:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .card img{width:100%;height:210px;object-fit:cover;background:#000;}
+  .card-body{padding:28px;}
+  .card h3{font-family:var(--head);font-weight:600;font-size:27px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:4px;}
+  .card .meta{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .card p{color:var(--muted);font-size:15px;}
+  .specs{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;display:grid;gap:9px;}
+  .spec{display:flex;justify-content:space-between;font-size:13.5px;}
+  .spec span:first-child{color:var(--muted);}
+  .spec span:last-child{color:var(--text);font-variant-numeric:tabular-nums;}
+
+  /* ---------- SPLIT ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .split img{width:100%;border:1px solid var(--line);}
+  .list{margin-top:26px;display:grid;gap:16px;}
+  .item{display:flex;gap:15px;align-items:flex-start;}
+  .item .dot{flex:0 0 auto;margin-top:8px;width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .item h4{font-size:15.5px;font-weight:600;margin-bottom:3px;}
+  .item p{color:var(--muted);font-size:14.5px;}
+
+  /* ---------- GALLERY ---------- */
+  .glink{display:block;text-decoration:none;color:inherit;cursor:pointer;}
+  .glink:hover figure{border-color:var(--gold);}
+  .gallery{margin-top:62px;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:238px;gap:16px;}
+  .gallery figure{overflow:hidden;position:relative;border:1px solid var(--line);margin:0;background:#000;}
+  .gallery figure:first-child{grid-column:span 2;grid-row:span 2;}
+  .gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s,filter .6s;filter:saturate(.78) brightness(.86);}
+  .gallery figure:hover img{transform:scale(1.08);filter:saturate(1) brightness(1);}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:42px 18px 15px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:linear-gradient(transparent,rgba(8,9,12,.94));color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:10px;}
+  .gallery figcaption .go{color:var(--gold);font-size:10.5px;letter-spacing:.2em;white-space:nowrap;opacity:0;transform:translateX(-8px);transition:.35s;}
+  .gallery figure:hover figcaption .go{opacity:1;transform:translateX(0);}
+
+  /* ---------- FILM DISC GRID ---------- */
+  .films{margin-top:58px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .films figure{margin:0;background:var(--panel);border:1px solid var(--line);overflow:hidden;transition:.3s;scroll-margin-top:130px;}
+  .films figure:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .films img{width:100%;height:360px;object-fit:cover;display:block;transition:transform .55s,filter .55s;filter:saturate(.92) brightness(.94);}
+  .films figure:hover img{transform:scale(1.05);filter:saturate(1) brightness(1);}
+  .films figcaption{padding:15px 16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);}
+  .films figcaption b{display:block;color:var(--text);font-weight:600;font-size:12.5px;margin-bottom:3px;}
+
+  /* ---------- MULTIMEDIA ---------- */
+  .media-grid{margin-top:56px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;}
+  .media-box{background:var(--panel);border:1px solid var(--line);padding:26px;}
+  .media-box h4{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .vid{width:100%;aspect-ratio:16/9;border:1px solid var(--line);display:block;background:#000;}
+  audio{width:100%;margin-top:14px;}
+  .media-note{color:var(--muted);font-size:13.5px;margin-top:14px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  form{display:grid;gap:15px;}
+  label{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block;}
+  input,textarea,select{width:100%;background:var(--bg-2);border:1px solid var(--line);color:var(--text);padding:13px 15px;font-family:var(--body);font-size:14.5px;transition:.25s;}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);}
+  textarea{min-height:132px;resize:vertical;}
+  .contact-side h3{font-family:var(--head);font-weight:600;font-size:30px;text-transform:uppercase;margin-bottom:14px;}
+  .contact-side p{color:var(--muted);font-size:15.5px;}
+  .contact-side .link-list{margin-top:26px;display:grid;gap:12px;}
+  .contact-side a{color:var(--gold);text-decoration:none;font-size:14.5px;}
+
+  footer{border-top:1px solid var(--line);padding:44px 32px;text-align:center;color:var(--muted);font-size:13px;}
+  footer .f-brand{font-family:var(--head);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text);font-size:16px;margin-bottom:10px;}
+
+  @media(max-width:900px){
+    .hero-inner,.split,.contact-grid,.media-grid{grid-template-columns:1fr;}
+    .gallery,.films{grid-template-columns:repeat(2,1fr);}
+    nav ul{gap:18px;}
+    .nav-wrap{flex-direction:column;gap:14px;}
+    section{padding:80px 22px;}
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">Optical<span>.</span>Storage</a>
+    <nav>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#discs">The Discs</a></li>
+        <li><a href="#films">On Disc</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">A Visual History · 1982 — Present</div>
+      <h1>The Evolution of <em>Optical Storage</em></h1>
+      <p class="lede">From the first compact disc to the age of streaming — how humanity learned to store light, then quietly traded quality for convenience.</p>
+      <div class="cta-row">
+        <a href="#timeline" class="btn solid">Explore the Timeline</a>
+        <a href="#discs" class="btn">Compare the Formats</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="wix_images/cd_disc.png" alt="Compact Disc">
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-tag">01 — Timeline</div>
+    <h2>Four moments that changed how we store media</h2>
+    <p class="sec-intro">Each format solved a real problem of its era. Each one was eventually declared obsolete — usually before it actually was.</p>
+    <div class="timeline">
+      <div class="tl">
+        <div class="tl-year">1982</div>
+        <div class="tl-title">The Compact Disc launches</div>
+        <p class="tl-body">Philips and Sony release the CD in Japan and Europe. A 120 mm polycarbonate disc holds 700 MB — or 74 minutes of uncompressed audio, a length reportedly chosen so Beethoven's Ninth Symphony would fit on one disc.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-year">1995</div>
+        <div class="tl-title">DVD brings the cinema home</div>
+        <p class="tl-body">With 4.7 GB per layer (8.5 GB on dual-layer discs), the DVD delivers full-length films with far better picture than VHS, plus multiple audio tracks, subtitles and chapter menus.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-year">2006</div>
+        <div class="tl-title">Blu-ray wins the high-definition war</div>
+        <p class="tl-body">A blue-violet 405 nm laser reads far smaller pits, pushing capacity to 25 GB per layer and 50 GB on dual-layer discs — enough for true 1080p and later 4K Ultra HD.</p>
+      </div>
+      <div class="tl">
+        <div class="tl-year">2007</div>
+        <div class="tl-title">Streaming arrives</div>
+        <p class="tl-body">Netflix launches its streaming service. Convenience wins the decade — but the bitrate never caught up with the disc, and the trade-off is still visible on any large screen today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-tag">02 — Gallery</div>
+    <h2>The medium, up close</h2>
+    <p class="sec-intro">Forty years of optical media, from the polycarbonate CD to the 100 GB Ultra HD Blu-ray. Click any disc to jump straight to its story.</p>
+    <div class="gallery">
+      <a class="glink" href="#card-cd"><figure><img src="wix_images/cd_disc.png" alt="Compact Disc"><figcaption><span>Compact Disc · 1982</span><span class="go">View details →</span></figcaption></figure></a>
+      <a class="glink" href="#card-cd"><figure><img src="wix_images/cd_jewel_case.jpg" alt="CD in jewel case"><figcaption><span>Jewel Case</span><span class="go">View details →</span></figcaption></figure></a>
+      <a class="glink" href="#card-dvd"><figure><img src="wix_images/dvd_disc.png" alt="DVD disc"><figcaption><span>DVD · 1995</span><span class="go">View details →</span></figcaption></figure></a>
+      <a class="glink" href="#card-bluray"><figure><img src="wix_images/bluray_disc.png" alt="Blu-ray disc"><figcaption><span>Blu-ray · 2006</span><span class="go">View details →</span></figcaption></figure></a>
+      <a class="glink" href="#discs"><figure><img src="wix_images/cd_stack.jpg" alt="Stack of discs"><figcaption><span>The Collection</span><span class="go">Compare all →</span></figcaption></figure></a>
+    </div>
+  </div>
+</section>
+
+<section id="discs" style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-tag">03 — The Discs</div>
+    <h2>Every physical format, side by side</h2>
+    <p class="sec-intro">Optical storage never really disappeared — it simply stopped being the default. Here is what each disc actually carries.</p>
+    <div class="grid">
+      <div class="card" id="card-cd">
+        <img src="wix_images/cd_jewel_case.jpg" alt="Audio CD in an open jewel case">
+        <div class="card-body">
+          <div class="meta">1982 · Philips &amp; Sony</div>
+          <h3>Compact Disc</h3>
+          <p>The format that killed vinyl's mainstream run — and is now outliving streaming in one key respect: you own it permanently.</p>
+          <div class="specs">
+            <div class="spec"><span>Capacity</span><span>700 MB</span></div>
+            <div class="spec"><span>Audio</span><span>74–80 min</span></div>
+            <div class="spec"><span>Laser</span><span>780 nm infrared</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-dvd">
+        <img src="wix_images/dvd_disc.png" alt="DVD recordable disc">
+        <div class="card-body">
+          <div class="meta">1995 · DVD Consortium</div>
+          <h3>DVD</h3>
+          <p>Six times the capacity of a CD. Brought widescreen video, multi-language audio and interactive menus into ordinary living rooms.</p>
+          <div class="specs">
+            <div class="spec"><span>Capacity</span><span>4.7 / 8.5 GB</span></div>
+            <div class="spec"><span>Video</span><span>MPEG-2, up to 9.8 Mbps</span></div>
+            <div class="spec"><span>Laser</span><span>650 nm red</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-bluray">
+        <img src="wix_images/bluray_disc.png" alt="Ultra HD Blu-ray disc">
+        <div class="card-body">
+          <div class="meta">2006 · Sony / Blu-ray Disc Association</div>
+          <h3>Blu-ray</h3>
+          <p>Still the highest-quality consumer video medium ever released — and the reference point every streaming service quietly avoids comparing itself to.</p>
+          <div class="specs">
+            <div class="spec"><span>Capacity</span><span>25 / 50 / 100 GB</span></div>
+            <div class="spec"><span>Video</span><span>up to 128 Mbps, 4K HDR</span></div>
+            <div class="spec"><span>Laser</span><span>405 nm blue-violet</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="strengths">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="sec-tag">04 — Why Physical Still Wins</div>
+        <h2>The advantages of CD and Blu-ray</h2>
+        <p class="sec-intro">Two formats, four decades apart, share one property that streaming structurally cannot offer: permanence.</p>
+        <div class="list">
+          <div class="item"><div class="dot"></div><div><h4>Real ownership</h4><p>A disc is yours. A streaming licence can be revoked, edited or removed without notice — and regularly is.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>No internet required</h4><p>No buffering, no bandwidth caps, no server outages. The disc works in 2036 exactly as it does today.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Far higher bitrate</h4><p>Blu-ray delivers up to 128 Mbps with lossless audio; typical 4K streaming sits between 15 and 25 Mbps.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Universal compatibility</h4><p>A CD pressed in 1985 still plays in a 2026 car stereo. Try that with a 1985 file format.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Built for the long term</h4><p>Blu-ray's hard-coating resists scratches, and archival discs are rated for decades rather than subscription cycles.</p></div></div>
+        </div>
+      </div>
+      <div><img src="wix_images/cd_stack.jpg" alt="Stack of compact discs"></div>
+    </div>
+  </div>
+</section>
+
+<section id="digital" style="background:linear-gradient(rgba(14,16,21,.86),rgba(14,16,21,.94)),url('images/bg-earth.jpg') center/cover no-repeat;">
+  <div class="wrap">
+    <div class="split">
+      <div><img src="wix_images/bluray_disc.png" alt="Ultra HD Blu-ray disc"></div>
+      <div>
+        <div class="sec-tag">05 — The Trade-Off</div>
+        <h2>What digital content quietly costs you</h2>
+        <p class="sec-intro">Streaming is convenient. It is also, measurably, a downgrade — and most viewers have never seen the comparison side by side.</p>
+        <div class="list">
+          <div class="item"><div class="dot"></div><div><h4>Not truly high definition</h4><p>A 4K stream compresses to roughly a fifth of a 4K Blu-ray's data. Dark scenes, film grain and fine detail are the first casualties.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>You rent, you don't own</h4><p>Titles leave catalogues when licences expire. Your "library" is a list of permissions, not a collection.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Dependence on infrastructure</h4><p>Outages, throttling, regional restrictions and data caps all sit between you and the content you already pay for.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Subscriptions stack up</h4><p>Four or five monthly services cost more per year than building a shelf of discs you keep forever.</p></div></div>
+          <div class="item"><div class="dot"></div><div><h4>Platforms can disappear</h4><p>When a service shuts down, purchases go with it. Physical media has no such single point of failure.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="films" style="background:linear-gradient(rgba(14,16,21,.72),rgba(14,16,21,.88)),url('images/bg-lines.png') center/cover no-repeat;">
+  <div class="wrap">
+    <div class="sec-tag">06 — On Disc</div>
+    <h2>Physical media, real shelves</h2>
+    <p class="sec-intro">Discs you can hold, keep and replay forever — a CD soundtrack, Blu-ray editions and a 4K Ultra HD release. This is what owning your media actually looks like.</p>
+    <div class="films">
+      <a class="glink" href="#card-cd"><figure>
+        <img src="images/film-michael.jpg" alt="Michael — Songs from the Motion Picture on CD">
+        <figcaption><b>Michael</b>CD · Songs from the Motion Picture — Jump to CD</figcaption>
+      </figure></a>
+      <a class="glink" href="#card-bluray"><figure>
+        <img src="images/film-terrifier3.jpg" alt="Terrifier 3 on Blu-ray">
+        <figcaption><b>Terrifier 3</b>Blu-ray Disc — Jump to Blu-ray</figcaption>
+      </figure></a>
+      <a class="glink" href="#card-bluray"><figure>
+        <img src="images/film-ballerina.jpg" alt="Ballerina on 4K Ultra HD Blu-ray">
+        <figcaption><b>Ballerina</b>4K Ultra HD + Blu-ray — Jump to Blu-ray</figcaption>
+      </figure></a>
+      <a class="glink" href="#card-bluray"><figure>
+        <img src="images/film-duo.jpg" alt="Terrifier — The Bloody Duo two-film Blu-ray collection">
+        <figcaption><b>The Bloody Duo</b>Blu-ray · Two-Film Collection — Jump to Blu-ray</figcaption>
+      </figure></a>
+    </div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="wrap">
+    <div class="sec-tag">07 — Multimedia</div>
+    <h2>See it, hear it</h2>
+    <p class="sec-intro">Video and audio side by side — because the difference between a disc and a stream is something you notice with your eyes and ears, not on a spec sheet.</p>
+    <div class="media-grid">
+      <div class="media-box">
+        <h4>Video — The Legendary DVD Logo</h4>
+        <iframe class="vid" src="https://www.youtube.com/embed/383YLaS6z0U" title="10 Hours of the Legendary DVD Logo Bouncing (Will It Hit the Corner?)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+        <p class="media-note">The bouncing DVD screensaver — the most famous optical-disc icon of the 2000s. Source: YouTube (Jony DC), embedded for educational use.</p>
+      </div>
+      <div class="media-box">
+        <h4>Audio — The symphony that shaped the CD</h4>
+        <audio controls src="audio/ode-to-joy.mp3"></audio>
+        <p class="media-note">Beethoven's Ninth Symphony (Ode to Joy) — the work whose length reportedly defined the CD's 74-minute capacity. Recording: United States Air Force Band of the Rockies (public domain).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-tag">08 — Contact</div>
+    <h2>Get in touch</h2>
+    <div class="contact-grid">
+      <form>
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" type="text" placeholder="e.g. Andrew Cheung">
+        </div>
+        <div>
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com">
+        </div>
+        <div>
+          <label for="topic">Subject</label>
+          <select id="topic">
+            <option>Question about optical formats</option>
+            <option>Corrections or feedback</option>
+            <option>Request for sources</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="msg">Message</label>
+          <textarea id="msg" placeholder="Write your message here..."></textarea>
+        </div>
+        <button type="submit" class="btn solid" style="cursor:pointer;">Send Message</button>
+      </form>
+      <div class="contact-side">
+        <h3>About this project</h3>
+        <p>This site was built as a study of optical storage history — the formats, the trade-offs, and why physical media still matters in a streaming-first world.</p>
+        <div class="link-list">
+          <a href="#top">Back to top ↑</a>
+          <a href="#discs">Jump to format comparison</a>
+          <a href="mailto:s20241101@qos.edu.hk">Email the author</a>
+          <a href="https://en.wikipedia.org/wiki/Optical_disc" target="_blank" rel="noopener">External reference: Optical disc</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-brand">Optical Storage · A Visual History</div>
+  <div>School project · Images via Wikimedia Commons (free licences)</div>
+  <div style="margin-top:14px;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;">Design by <a href="mailto:s20241101@qos.edu.hk" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,164,92,.55);padding-bottom:2px;transition:.25s;" onmouseover="this.style.color='#e8eaf0'" onmouseout="this.style.color='var(--gold)'">Jack Wong</a></div>
+</footer>
+
+</body>
+</html>
